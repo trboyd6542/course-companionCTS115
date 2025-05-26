@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course Companion – IS Business Concepts</title>
+  <style>
+    body { font-family: Arial, sans-serif; max-width: 700px; margin: 2rem auto; background: #f4f4f4; padding: 2rem; border-radius: 10px; }
+    header { text-align: center; margin-bottom: 20px; }
+    header img { max-width: 150px; }
+    textarea { width: 100%; height: 100px; }
+    button { padding: 10px 15px; background: #004080; color: white; border: none; border-radius: 5px; cursor: pointer; margin-top: 10px; }
+    #response { margin-top: 20px; background: white; padding: 1rem; border-radius: 5px; white-space: pre-wrap; }
+    .warning { font-size: 0.9em; color: #800000; margin-top: 1rem; }
+  </style>
+</head>
+<body>
+  <header>
+    <img src="logo.png" alt="JCC Logo" />
+    <h1>Course Companion</h1>
+    <h2>Information Systems Business Concepts</h2>
+  </header>
+
+  <p>Use this assistant to ask academic questions about MIS, DSS, ERP, analytics, and business systems.</p>
+  <textarea id="prompt" maxlength="300" placeholder="Enter your course-related question (max 300 characters)..."></textarea><br/>
+  <button onclick="ask()">Ask GPT</button>
+  <div class="warning">⚠️ This assistant does not support graded assignments, exams, or quizzes. Use for study and learning only.</div>
+  <div id="response"></div>
+
+  <script>
+    async function ask() {
+      const prompt = document.getElementById("prompt").value.trim();
+      const resBox = document.getElementById("response");
+      if (prompt.length === 0) {
+        resBox.innerText = "Please enter a question.";
+        return;
+      }
+
+      resBox.innerText = "Thinking...";
+      const response = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ prompt })
+      });
+      const data = await response.json();
+      resBox.innerText = data.reply || "No response.";
+    }
+  </script>
+</body>
+</html>
