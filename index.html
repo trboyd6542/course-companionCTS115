@@ -42,7 +42,9 @@
   <script>
     function openChat() {
       const base = "https://chat.openai.com/?model=gpt-4";
-      const prompt = encodeURIComponent("You are a helpful assistant for a college-level course titled 'Information Systems Business Concepts'. Answer questions about Management Information Systems (MIS), Decision Support Systems (DSS), ERP, data analytics, cloud computing, and AI in business. Always explain concepts clearly and relate them to practical business applications.");
+      <!--
+      // const prompt = encodeURIComponent("You are a helpful assistant for a college-level course titled 'Information Systems Business Concepts'. Answer questions about Management Information Systems (MIS), Decision Support Systems (DSS), ERP, data analytics, cloud computing, and AI in business. Always explain concepts clearly and relate them to practical business applications.");
+      //-->
       const url = `https://chat.openai.com/?model=gpt-4&prompt=${prompt}`;
       window.open(url, "_blank");
     }
