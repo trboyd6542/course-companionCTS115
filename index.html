@@ -34,17 +34,14 @@
 </head>
 <body>
   <h1>📚 Course Companion</h1>
-  <p>Welcome! This tool helps you explore topics from your <strong>Information Systems Business Concepts</strong> course.</p>
-  <p>Click the button below to open ChatGPT with a pre-filled prompt. Be sure to follow JCC’s academic integrity policy. Use this assistant for learning, not graded assignments.</p>
+  <p>Welcome to your <strong>Information Systems Business Concepts</strong> assistant. Click below to open ChatGPT and ask your own course-related questions.</p>
+  <p><strong>Reminder:</strong> This tool is for learning support only. Do not use it to complete graded work. Follow JCC's academic integrity policy.</p>
 
-  <button onclick="openChat()">Launch Course Assistant</button>
+  <button onclick="openChat()">Launch ChatGPT</button>
 
   <script>
     function openChat() {
-      const base = "https://chat.openai.com/?model=gpt-4";
-     
-      const url = `https://chat.openai.com/?model=gpt-4&prompt=${prompt}`;
-      window.open(url, "_blank");
+      window.open("https://chat.openai.com/", "_blank");
     }
   </script>
 </body>
