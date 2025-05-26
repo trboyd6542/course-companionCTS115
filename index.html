@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Course Companion - IS Business Concepts</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      max-width: 700px;
+      margin: 2rem auto;
+      padding: 1rem;
+      background-color: #f4f4f4;
+      border-radius: 8px;
+    }
+    h1 {
+      color: #2c3e50;
+    }
+    p {
+      margin-bottom: 1rem;
+    }
+    button {
+      background-color: #0066cc;
+      color: white;
+      padding: 0.75rem 1.25rem;
+      border: none;
+      border-radius: 5px;
+      font-size: 1rem;
+      cursor: pointer;
+    }
+    button:hover {
+      background-color: #004d99;
+    }
+  </style>
+</head>
+<body>
+  <h1>📚 Course Companion</h1>
+  <p>Welcome! This tool helps you explore topics from your <strong>Information Systems Business Concepts</strong> course.</p>
+  <p>Click the button below to open ChatGPT with a pre-filled prompt. Be sure to follow JCC’s academic integrity policy. Use this assistant for learning, not graded assignments.</p>
+
+  <button onclick="openChat()">Launch Course Assistant</button>
+
+  <script>
+    function openChat() {
+      const base = "https://chat.openai.com/?model=gpt-4";
+      const prompt = encodeURIComponent("You are a helpful assistant for a college-level course titled 'Information Systems Business Concepts'. Answer questions about Management Information Systems (MIS), Decision Support Systems (DSS), ERP, data analytics, cloud computing, and AI in business. Always explain concepts clearly and relate them to practical business applications.");
+      const url = `https://chat.openai.com/?model=gpt-4&prompt=${prompt}`;
+      window.open(url, "_blank");
+    }
+  </script>
+</body>
+</html>
